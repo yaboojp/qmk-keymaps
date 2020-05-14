@@ -14,17 +14,6 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 #include QMK_KEYBOARD_H
-#ifdef PROTOCOL_LUFA
-#include "lufa.h"
-#include "split_util.h"
-#endif
-
-extern keymap_config_t keymap_config;
-
-#ifdef RGBLIGHT_ENABLE
-//Following line allows macro to read current RGB settings
-extern rgblight_config_t rgblight_config;
-#endif
 
 enum custom_keycodes {
   RGBRST = SAFE_RANGE
@@ -34,6 +23,8 @@ enum custom_keycodes {
 #define KC_LLANG2 LT(KC_LGUI, KC_LANG2)
 #define KC_LMOVE LGUI(LSFT(KC_LBRC))
 #define KC_RMOVE LGUI(LSFT(KC_RBRC))
+#define KC_QVOLU LALT(LSFT(KC__VOLUP))
+#define KC_QVOLD LALT(LSFT(KC__VOLDOWN))
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [0] = LAYOUT( \
@@ -44,32 +35,12 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     MO(1),     KC_LCTL,    KC_LALT,    KC_LGUI,    KC_SPC,        MO(1),    KC_RGUI, KC_RSFT,                   KC_LEFT,KC_DOWN,KC_RGHT \
   ),
   [1] = LAYOUT( \
-    RGB_HUD,  RGB_HUI, RGB_SAD, RGB_SAI, RGB_VAD, RGB_VAI,       KC_F6,   KC_F7,   KC_F8,   KC_F9,   KC_F10,  KC_F11,  KC_F12,    KC_DEL, \
+    RGB_HUD,  RGB_HUI, RGB_SAD, RGB_SAI, RGB_VAD, RGB_VAI,       KC_F6,   KC_MRWD,   KC_MPLY,   KC_MFFD,   KC__MUTE,  KC_QVOLD,  KC_QVOLU,    KC_DEL, \
     KC_TAB,   KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,           KC_PGUP, KC_LMOVE, KC_UP, KC_RMOVE, XXXXXXX, RGB_MOD, RGB_TOG, RGBRST, \
     KC_LGUI,    KC_A,    KC_S,    KC_D,    KC_F,    KC_G,           KC_PGDN, KC_LEFT, KC_DOWN, KC_RGHT, XXXXXXX, XXXXXXX,        KC_ENT, \
     KC_LSFT,      KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,           XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, _______, KC_PGUP, _______, \
     XXXXXXX,   KC_LCTL,    KC_LALT,    KC_LGUI,    KC_SPC,           XXXXXXX, KC_RCTL, KC_RSFT,                    KC_HOME, KC_PGDN, KC_END \
   )
-};
-
-// define variables for reactive RGB
-bool TOG_STATUS = false;
-int RGB_current_mode;
-
-
-const macro_t *action_get_macro(keyrecord_t *record, uint8_t id, uint8_t opt)
-{
-  // MACRODOWN only works in this function
-      switch(id) {
-        case 0:
-          if (record->event.pressed) {
-            register_code(KC_RSFT);
-          } else {
-            unregister_code(KC_RSFT);
-          }
-        break;
-      }
-    return MACRO_NONE;
 };
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
@@ -79,22 +50,9 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         if (record->event.pressed) {
           eeconfig_update_rgblight_default();
           rgblight_enable();
-          RGB_current_mode = rgblight_config.mode;
         }
       #endif
       break;
   }
   return true;
-}
-
-void matrix_init_user(void) {
-
-}
-
-void matrix_scan_user(void) {
-
-}
-
-void led_set_user(uint8_t usb_led) {
-
 }
