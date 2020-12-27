@@ -15,9 +15,12 @@
  */
 #include QMK_KEYBOARD_H
 
+#define KC_QVOLU LALT(LSFT(KC__VOLUP))
+#define KC_QVOLD LALT(LSFT(KC__VOLDOWN))
+
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 [0] = LAYOUT( /* Base */
-  LCTL(LGUI(KC_Q)), KC_MRWD, KC_MPLY, KC_MFFD \
+  KC_MPLY, KC__MUTE, KC_QVOLD, KC_QVOLU \
 ),
 };
 
