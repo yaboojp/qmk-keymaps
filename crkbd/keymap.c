@@ -36,6 +36,16 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #define CT_LGRV LCTL(KC_GRV)
 
+#define LGUI_1 LGUI(KC_1)
+#define LGUI_2 LGUI(KC_2)
+#define LGUI_3 LGUI(KC_3)
+#define LGUI_4 LGUI(KC_4)
+#define LGUI_5 LGUI(KC_5)
+#define LGUI_6 LGUI(KC_6)
+#define LGUI_7 LGUI(KC_7)
+#define LGUI_8 LGUI(KC_8)
+#define LGUI_9 LGUI(KC_9)
+
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [0] = LAYOUT_split_3x6_3(
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
@@ -64,7 +74,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   [2] = LAYOUT_split_3x6_3(
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-     KC_ESC,   _______, _______, _______, _______, _______,                      OS_MUTE, KC_HOME, KC_UP,   KC_END,  XXXXXXX, KC_BSPC,
+      _______, _______, _______, _______, _______, _______,                      OS_MUTE, KC_HOME, KC_UP,   KC_END,  XXXXXXX, KC_BSPC,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
       _______, _______, _______, _______, _______, _______,                      KC_PGUP, KC_LEFT, KC_DOWN, KC_RGHT, XXXXXXX, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
@@ -76,11 +86,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   [3] = LAYOUT_split_3x6_3(
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-        RESET, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                      KC_MRWD, KC_MPLY, KC_MFFD, RESET,   RGB_TOG, RGB_MOD,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      RGB_TOG, RGB_HUI, RGB_SAI, RGB_VAI, XXXXXXX, XXXXXXX,                      KC__MUTE, QVOLD,   QVOLU,  XXXXXXX, XXXXXXX, XXXXXXX,
+      XXXXXXX,  LGUI_1, LGUI_2,  LGUI_3,  LGUI_4,  LGUI_5,                       KC__MUTE, QVOLD,   QVOLU,  RGB_HUI, RGB_SAI, RGB_VAI,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      RGB_MOD, RGB_HUD, RGB_SAD, RGB_VAD, XXXXXXX, XXXXXXX,                      KC_MRWD, KC_MPLY, KC_MFFD, XXXXXXX, XXXXXXX, XXXXXXX,
+      XXXXXXX,  LGUI_6, LGUI_7,  LGUI_8,  LGUI_9,  XXXXXXX,                      XXXXXXX, XXXXXXX, XXXXXXX, RGB_HUD, RGB_SAD, RGB_VAD,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
                                           _______, _______,  _______, _______,   _______, _______
                                       //`--------------------------'  `--------------------------'
