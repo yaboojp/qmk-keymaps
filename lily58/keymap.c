@@ -17,13 +17,13 @@ enum layer_number {
   _ADJUST,
 };
 
-#define L_LANG1 LT(_LOWER, KC_LANG1)
-#define L_LANG2 LT(_LOWER, KC_LANG2)
-#define R_LANG1 LT(_RAISE, KC_LANG1)
-#define R_LANG2 LT(_RAISE, KC_LANG2)
+#define L_LANG1 LT(_LOWER, KC_LNG1)
+#define L_LANG2 LT(_LOWER, KC_LNG2)
+#define R_LANG1 LT(_RAISE, KC_LNG1)
+#define R_LANG2 LT(_RAISE, KC_LNG2)
 
-#define QVOLU LALT(LSFT(KC__VOLUP))
-#define QVOLD LALT(LSFT(KC__VOLDOWN))
+#define QVOLU LALT(LSFT(KC_VOLU))
+#define QVOLD LALT(LSFT(KC_VOLD))
 
 #define LMOVE LGUI(LSFT(KC_LBRC))
 #define RMOVE LGUI(LSFT(KC_RBRC))
@@ -47,7 +47,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 [_QWERTY] = LAYOUT( \
   KC_ESC,   KC_1,   KC_2,    KC_3,    KC_4,    KC_5,                        KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    KC_BSPC, \
   KC_TAB,   KC_Q,   KC_W,    KC_E,    KC_R,    KC_T,                        KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    KC_MINS, \
-  KC_LCTRL, KC_A,   KC_S,    KC_D,    KC_F,    KC_G,                        KC_H,    KC_J,    KC_K,    KC_L,    KC_SCLN, KC_ENT, \
+  KC_LCTL, KC_A,   KC_S,    KC_D,    KC_F,    KC_G,                        KC_H,    KC_J,    KC_K,    KC_L,    KC_SCLN, KC_ENT, \
   SFT_ESC,  KC_Z,   KC_X,    KC_C,    KC_V,    KC_B,    XXXXXXX,  XXXXXXX,  KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH, KC_QUOT, \
                         MO(_ADJUST),KC_LALT,KC_LGUI,    L_LANG2,  R_LANG1,  SFT_SPC, KC_BSPC, MO(_ADJUST) \
 ),
@@ -70,7 +70,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 [_ADJUST] = LAYOUT( \
   XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                   KC_MRWD, KC_MPLY, KC_MFFD, XXXXXXX, XXXXXXX, XXXXXXX, \
-  XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                   KC__MUTE, QVOLD,    QVOLU, XXXXXXX, XXXXXXX, XXXXXXX, \
+  XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                   KC_MUTE, QVOLD,    QVOLU, XXXXXXX, XXXXXXX, XXXXXXX, \
   XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                   XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, \
   XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,\
                              _______, _______, _______, _______, _______,  _______, _______, _______ \
