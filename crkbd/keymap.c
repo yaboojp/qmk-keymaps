@@ -29,10 +29,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define LMOVE LGUI(LSFT(KC_LBRC))
 #define RMOVE LGUI(LSFT(KC_RBRC))
 
-#define OS_MUTE LCTL(LSFT(LALT(KC_M)))
-
 #define SFT_ESC MT(MOD_LSFT, KC_ESC)
-#define SFT_BSPC MT(MOD_RSFT, KC_BSPC)
+#define SFT_SPC MT(MOD_RSFT, KC_SPC)
 
 #define CT_LGRV LCTL(KC_GRV)
 
@@ -55,7 +53,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
       SFT_ESC,    KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,                         KC_N,    KC_M, KC_COMM,  KC_DOT, KC_SLSH, KC_QUOT,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-                                          KC_LALT, KC_LGUI, L_LANG2,    R_LANG1,  KC_SPC, SFT_BSPC
+                                          KC_LALT, KC_LGUI, L_LANG2,    R_LANG1, SFT_SPC, KC_BSPC
                                       //`--------------------------'  `--------------------------'
 
   ),
@@ -66,7 +64,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
       KC_GRV,    KC_1,    KC_2,    KC_3,    KC_4,    KC_5,                         KC_6,    KC_7,    KC_8,    KC_9,    KC_0, KC_PIPE,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      _______,  LGUI_1, LGUI_2,  LGUI_3,  LGUI_4,  LGUI_5,                      KC_PLUS, KC_LCBR, KC_RCBR, KC_LBRC, KC_RBRC, KC_EQL,
+      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                      KC_PLUS, KC_LCBR, KC_RCBR, KC_LBRC, KC_RBRC, KC_EQL,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
                                           _______, _______, _______,      MO(3), _______, _______
                                       //`--------------------------'  `--------------------------'
@@ -78,7 +76,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
       _______, _______, _______, _______, _______, _______,                      KC_PGDN, KC_LEFT, KC_DOWN, KC_RGHT, XXXXXXX, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      _______, _______, _______, _______, _______, _______,                      OS_MUTE, LMOVE,   CT_LGRV, RMOVE,   XXXXXXX, XXXXXXX,
+      _______, _______, _______, _______, _______, _______,                      XXXXXXX, LMOVE,   CT_LGRV, RMOVE,   XXXXXXX, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
                                           _______, _______,  MO(3),     _______,  _______, _______
                                       //`--------------------------'  `--------------------------'
