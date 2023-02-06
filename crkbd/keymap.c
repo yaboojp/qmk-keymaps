@@ -18,13 +18,13 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #include QMK_KEYBOARD_H
 
-#define L_LANG1 LT(MO(1), KC_LANG1)
-#define L_LANG2 LT(MO(1), KC_LANG2)
-#define R_LANG1 LT(MO(2), KC_LANG1)
-#define R_LANG2 LT(MO(2), KC_LANG2)
+#define L_LANG1 LT(MO(1), KC_LNG1)
+#define L_LANG2 LT(MO(1), KC_LNG2)
+#define R_LANG1 LT(MO(2), KC_LNG1)
+#define R_LANG2 LT(MO(2), KC_LNG2)
 
-#define QVOLU LALT(LSFT(KC__VOLUP))
-#define QVOLD LALT(LSFT(KC__VOLDOWN))
+#define QVOLU LALT(LSFT(KC_VOLU))
+#define QVOLD LALT(LSFT(KC_VOLD))
 
 #define LMOVE LGUI(LSFT(KC_LBRC))
 #define RMOVE LGUI(LSFT(KC_RBRC))
@@ -84,11 +84,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   [3] = LAYOUT_split_3x6_3(
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                      KC_MRWD, KC_MPLY, KC_MFFD, RESET,   RGB_TOG, RGB_MOD,
+      QK_BOOT, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                      KC_MRWD, KC_MPLY, KC_MFFD, XXXXXXX, XXXXXXX, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                      KC__MUTE, QVOLD,   QVOLU,  RGB_HUI, RGB_SAI, RGB_VAI,
+      RGB_TOG, RGB_HUI, RGB_SAI, RGB_VAI, XXXXXXX, XXXXXXX,                      KC_MUTE,  QVOLD,   QVOLU, XXXXXXX, XXXXXXX, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                      XXXXXXX, XXXXXXX, XXXXXXX, RGB_HUD, RGB_SAD, RGB_VAD,
+      RGB_MOD, RGB_HUD, RGB_SAD, RGB_VAD, XXXXXXX, XXXXXXX,                      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
                                           _______, _______,  _______, _______,   _______, _______
                                       //`--------------------------'  `--------------------------'
